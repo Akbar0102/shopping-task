@@ -39,9 +39,9 @@ exports.findOne = (req, res) => {
         //if (!passwordIsValid) return res.status(401).json({ auth: false, token: null });
         if(err){
             if(err.kind === "not_found"){
-                res.status(400).json({message: `Tidak ada dengan id ${req.params.id}`});
+                res.status(400).json({message: `Tidak ada dengan id ${req.params.email}`});
             }else{
-                res.status(500).json({message: `Kesalahan saat mengambil data dengan id ${req.params.id}`});
+                res.status(500).json({message: `Kesalahan saat mengambil data dengan id ${req.params.email}`});
             }
         }else{
             // var token = jwt.sign({ id: data.id }, config.secret, {
